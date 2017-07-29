@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx"
+            fx:controller="guru.bug.bullsandcows.MainWindowController">
+    <top>
+        <HBox spacing="5.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+            <children>
+                <Spinner fx:id="guessNum1" initialValue="5" max="9" min="0" prefWidth="70"/>
+                <Spinner fx:id="guessNum2" initialValue="5" max="9" min="0" prefWidth="70"/>
+                <Spinner fx:id="guessNum3" initialValue="5" max="9" min="0" prefWidth="70"/>
+                <Spinner fx:id="guessNum4" initialValue="5" max="9" min="0" prefWidth="70"/>
+                <Button defaultButton="true" onAction="#doTurn" text="Go"/>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="turnsTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn prefWidth="75.0" text="Turn #">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="turnNumber"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="120.0" text="Guess">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="guess"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="Cows">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="cows"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="75.0" text="Bulls">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="bulls"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>
